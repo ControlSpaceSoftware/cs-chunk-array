@@ -1,6 +1,6 @@
 {
 	"name": "cs-chunk-array-by-size",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "chunk array of objects into groups limited to a given size",
 	"main": "lib/index.js",
 	"directories": {
