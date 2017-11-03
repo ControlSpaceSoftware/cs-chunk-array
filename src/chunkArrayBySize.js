@@ -1,6 +1,6 @@
 import {byteLengthOf} from './index'
 
-export function chunkArrayBySize(array, maxChunkSize = 100000) {
+export function chunkArrayBySize(array, maxChunkSize = 100000, options = {ignoreErrors: false}) {
 
 	let chunkSize = 0;
 	const lastIndex = array.length - 1;
@@ -17,7 +17,12 @@ export function chunkArrayBySize(array, maxChunkSize = 100000) {
 		const tmp = typeof item === 'string' ? item : JSON.stringify(item);
 		const size = byteLengthOf(tmp);
 		if (size > maxChunkSize) {
-			throw new RangeError(`item[${i}] is larger than max chunk size: ${maxChunkSize}`)
+			const message = `item[${i}] has size(${size}) which is larger than max chunk size: ${maxChunkSize}`;
+			if (!options.ignoreErrors) {
+				throw new RangeError(message);
+			} else {
+				console.log(message);
+			}
 		}
 		if (chunkSize + size > maxChunkSize) {
 			if (map.collector.length) {

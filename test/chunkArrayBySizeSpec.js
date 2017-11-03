@@ -26,9 +26,9 @@ describe('chunkArrayBySize(array, size)', () => {
 	it('handles non array value', () => {
 		expect(chunkArrayBySize({foo: 'bar'})).to.eql([[{foo: 'bar'}]]);
 	});
-	it('throws "item[0] is larger than max chunk size"', () => {
+	it('throws "item[0] has size(26) which is larger than max chunk size"', () => {
 		array = ['abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz'];
-		expect(() => chunkArrayBySize(array, 5)).to.throw('item[0] is larger than max chunk size: 5');
+		expect(() => chunkArrayBySize(array, 5)).to.throw('item[0] has size(26) which is larger than max chunk size: 5');
 	});
 	it('chunks strings', () => {
 		array = ['abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz'];
