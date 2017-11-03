@@ -23,6 +23,7 @@ export function chunkArrayBySize(array, maxChunkSize = 100000) {
 			if (map.collector.length) {
 				map.items.push(map.collector.slice());
 				map.collector.length = 0;
+				chunkSize = 0;
 			}
 		}
 		chunkSize += size;

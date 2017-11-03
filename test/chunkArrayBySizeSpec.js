@@ -3,8 +3,9 @@
 import chai from 'chai'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
-
+import largeJson from './test-large.json'
 import {chunkArrayBySize} from "../src/chunkArrayBySize";
+import {byteLengthOf} from "../src/byteLengthOf";
 
 chai.should();
 chai.use(sinonChai);
@@ -36,5 +37,12 @@ describe('chunkArrayBySize(array, size)', () => {
 	it('chunks objects', () => {
 		array = [{foo: 1}, {bar: 2}];
 		expect(chunkArrayBySize(array, 10)).to.eql([[{foo: 1}], [{bar: 2}]]);
+	});
+	it('handles large objects', () => {
+		const size = byteLengthOf(JSON.stringify(largeJson));
+		console.log(size);
+		array = [largeJson, {foo: 1}, {foo: 2}];
+		const result = chunkArrayBySize(array, 3538183);
+		expect(result.length).to.eql(2);
 	});
 });
