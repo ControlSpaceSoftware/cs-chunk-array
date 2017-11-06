@@ -1,6 +1,6 @@
 {
 	"name": "cs-chunk-array",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "chunk arrays into sub arrays by length or item size",
 	"main": "lib/index.js",
 	"directories": {
