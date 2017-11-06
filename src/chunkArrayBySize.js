@@ -3,11 +3,12 @@ import {byteLengthOf} from './index'
 export function chunkArrayBySize(array, maxChunkSize = 100000, options = {ignoreErrors: false}) {
 
 	let chunkSize = 0;
-	const lastIndex = array.length - 1;
 
 	if (!(array && array instanceof Array)) {
 		return [[array]];
 	}
+
+	const lastIndex = array.length - 1;
 
 	if (array.length === 0) {
 		return [array];
