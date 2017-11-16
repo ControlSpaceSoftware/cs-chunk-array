@@ -3,9 +3,6 @@
 	"version": "0.0.7",
 	"description": "chunk arrays into sub arrays by length or item size",
 	"main": "lib/index.js",
-	"directories": {
-		"test": "test"
-	},
 	"scripts": {
 		"help": "build-scripts help",
 		"scripts": "build-scripts scripts",
@@ -23,14 +20,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ControlSpaceSoftware/cs-chunk-array-by-size.git"
+		"url": "git+https://github.com/ControlSpaceSoftware/cs-chunk-array.git"
 	},
 	"author": "javadoug",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ControlSpaceSoftware/cs-chunk-array-by-size/issues"
+		"url": "https://github.com/ControlSpaceSoftware/cs-chunk-array/issues"
 	},
-	"homepage": "https://github.com/ControlSpaceSoftware/cs-chunk-array-by-size#readme",
+	"homepage": "https://github.com/ControlSpaceSoftware/cs-chunk-array#readme",
 	"devDependencies": {
 		"build-scripts": "github:ControlSpaceSoftware/build-scripts"
 	},
